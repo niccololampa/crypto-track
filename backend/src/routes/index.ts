@@ -1,14 +1,22 @@
 import express, { Request, Response } from 'express';
-import path from 'path';
 import dotenv from 'dotenv';
+import { CRYPTOCOINS } from 'types/types';
+import { getStoredCoinPrice } from '../controllers/crypto-prices';
+
 dotenv.config();
 const router = express.Router();
 
 router.get('/price/:coin', (req: Request, res: Response) => {
   const { coin } = req.params;
-  const minutes = req.query.minutes || process.env.DEFAULT_PRICE_MINUTES;
+  const cryptoCoin = coin as CRYPTOCOINS;
+  const minutes = Number(req.query.minutes || process.env.DEFAULT_PRICE_MINUTES);
 
-  res.json({ latest: 0, average: 0, history: [], count: 0 });
+  if (coin === 'bitcoin' || coin === 'dogecoin' || coin === 'ethereum') {
+  } else {
+    res.status(400).send('Invalid cypto coin');
+  }
+
+  res.json(getStoredCoinPrice({ coin: cryptoCoin, minutes: minutes }));
 });
 
 export default router;

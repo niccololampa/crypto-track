@@ -1,15 +1,6 @@
-type CRYPTODATA = {
-  date: Date;
-  price: number;
-};
+import { CRYPTOPRICES } from './types/types';
 
-type CRYPTOPRICES = {
-  bitcoin: CRYPTODATA[];
-  ethereum: CRYPTODATA[];
-  dogecoin: CRYPTODATA[];
-};
-
-const cryptoPrices: CRYPTOPRICES = {
+export const cryptoPrices: CRYPTOPRICES = {
   bitcoin: [],
   ethereum: [],
   dogecoin: []

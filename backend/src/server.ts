@@ -4,6 +4,7 @@ import routes from './routes';
 import logger from 'morgan';
 import { createServer } from 'http';
 import cors from 'cors';
+import { fetchCryptoPrices } from './controllers/crypto-prices';
 
 dotenv.config();
 const app = express();
@@ -25,3 +26,6 @@ server
   .on('error', (error) => {
     throw new Error(error.message);
   });
+
+fetchCryptoPrices();
+setInterval(fetchCryptoPrices, 60000);
