@@ -4,9 +4,15 @@ export default function Navigation() {
   return (
     <div>
       <nav>
-        <Link href="/bitcoin">BTC</Link>
-        <Link href="/ethereum">ETH</Link>
-        <Link href="/dogecoin">DOGE</Link>
+        <Link className="mr-2" href="/bitcoin">
+          BTC
+        </Link>
+        <Link className="mr-2" href="/ethereum">
+          ETH
+        </Link>
+        <Link className="mr-2" href="/dogecoin">
+          DOGE
+        </Link>
       </nav>
     </div>
   );
