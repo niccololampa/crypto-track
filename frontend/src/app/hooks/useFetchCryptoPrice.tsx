@@ -19,6 +19,7 @@ function useFetchCryptoPrice<T>({
     const fetchCryptoPrice = async () => {
       try {
         setLoading(true);
+        setError(null);
         const response = await axios.get(
           `${process.env.NEXT_PUBLIC_URL_BACKEND_API}/price/${coin}${
             minutes ? `?minutes=${minutes}` : ""
@@ -31,8 +32,10 @@ function useFetchCryptoPrice<T>({
         setLoading(false);
       }
     };
-
     fetchCryptoPrice();
+
+    const intervalID = setInterval(fetchCryptoPrice, 60000);
+    return () => clearInterval(intervalID);
   }, [coin, minutes]);
 
   return { data, loading, error };

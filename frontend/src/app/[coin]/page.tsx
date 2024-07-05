@@ -22,15 +22,13 @@ export default function CoinPage({ params }: CoinPageParams) {
     return <Layout>Loading...</Layout>;
   }
 
-  if (error) {
-    return <Layout>Error Fetching Data: {error}</Layout>;
-  }
-
   return (
     <Layout>
       {data && (
         <PriceDisplay latest={data.latest} average={data.average} coin={coin} />
       )}
+
+      {error && <div>Error downloading latest price data: {error}</div>}
     </Layout>
   );
 }
