@@ -3,6 +3,7 @@ import useFetchCryptoPrice from "../hooks/useFetchCryptoPrice";
 import { CryptoPrice } from "../types/types";
 import PriceDisplay from "../components/PriceDisplay";
 import Layout from "../components/Layout";
+import PriceChart from "../components/PriceChart";
 
 type CoinPageParams = {
   params: { coin: string };
@@ -25,7 +26,14 @@ export default function CoinPage({ params }: CoinPageParams) {
   return (
     <Layout>
       {data && (
-        <PriceDisplay latest={data.latest} average={data.average} coin={coin} />
+        <>
+          <PriceDisplay
+            latest={data.latest}
+            average={data.average}
+            coin={coin}
+          />
+          <PriceChart coin={coin} history={data.history} />
+        </>
       )}
 
       {error && <div>Error downloading latest price data: {error}</div>}

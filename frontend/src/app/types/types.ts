@@ -20,7 +20,7 @@ export type CryptoData = {
 export type CryptoPrice = {
   latest: number;
   average: number;
-  history: CryptoData;
+  history: CryptoData[];
   count: number;
 };
 

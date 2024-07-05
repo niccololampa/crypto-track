@@ -17,8 +17,8 @@ export default function PriceDisplay(props: PriceDisplayProps) {
         {Coin[coin]}({CoinTicker[coin]})
       </h1>
       <div>
-        <p>Latest: {latest}</p>
-        <p>Average: {average}</p>
+        <p>Latest: USD {latest.toFixed(2)}</p>
+        <p>Average: USD {average.toFixed(2)}</p>
       </div>
     </div>
   );
