@@ -26,8 +26,12 @@ function useFetchCryptoPrice<T>({
           }`
         );
         setData(response.data);
-      } catch (err) {
-        setError(err.message);
+      } catch (err: unknown) {
+        if (err instanceof AxiosError) {
+          setError(err.message);
+        } else {
+          setError("Unknown error occurred");
+        }
       } finally {
         setLoading(false);
       }
