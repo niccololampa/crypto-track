@@ -11,7 +11,7 @@ type PriceChartProps = {
 export default function PriceChart(props: PriceChartProps) {
   const { history, coin } = props;
 
-  const yData = history.map((point) => point.price);
+  const yData = history.map((point) => point.price.toFixed(2));
 
   const xData = history.map((point) =>
     moment(point.date).format("MM/DD/YY/hh:mm a")
