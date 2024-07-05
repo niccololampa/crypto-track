@@ -4,12 +4,15 @@ import { CryptoPrice } from "../types/types";
 import PriceDisplay from "../components/PriceDisplay";
 import Layout from "../components/Layout";
 import PriceChart from "../components/PriceChart";
+import { useSearchParams } from "next/navigation";
 
 type CoinPageParams = {
   params: { coin: string };
 };
 export default function CoinPage({ params }: CoinPageParams) {
   const { coin } = params;
+  const searchParams = useSearchParams();
+  const searchMinutes = Number(searchParams.get("minutes"));
 
   if (coin !== "bitcoin" && coin !== "dogecoin" && coin !== "ethereum") {
     return <div>Invalid coin</div>;
@@ -17,6 +20,7 @@ export default function CoinPage({ params }: CoinPageParams) {
 
   const { data, loading, error } = useFetchCryptoPrice<CryptoPrice>({
     coin: coin,
+    minutes: searchMinutes,
   });
 
   if (loading) {
