@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express';
 import dotenv from 'dotenv';
-import { CRYPTOCOINS } from 'types/types';
+import { CryptoCoins } from 'types/types';
 import { getStoredCoinPrice } from '../controllers/crypto-prices';
 
 dotenv.config();
@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.get('/price/:coin', (req: Request, res: Response) => {
   const { coin } = req.params;
-  const cryptoCoin = coin as CRYPTOCOINS;
+  const cryptoCoin = coin as CryptoCoins;
   const minutes = Number(req.query.minutes || process.env.DEFAULT_PRICE_MINUTES);
 
   if (coin === 'bitcoin' || coin === 'dogecoin' || coin === 'ethereum') {

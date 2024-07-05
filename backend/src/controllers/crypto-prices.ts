@@ -1,12 +1,12 @@
 import axios from 'axios';
 import { cryptoPrices } from '../prices';
-import { COINGECKOAPIPRICES, CRYPTOCOINS, CRYPTODATA } from 'types/types';
+import { CoinGeckoApiPrices, CryptoCoins, CryptoData } from 'types/types';
 
-const pushNewCoinPrices = ({ coin, date, price }: { coin: CRYPTOCOINS; date: Date; price: number }) => {
+const pushNewCoinPrices = ({ coin, date, price }: { coin: CryptoCoins; date: Date; price: number }) => {
   cryptoPrices[coin].push({ date, price });
 };
 
-const getAverageCoinPrice = (arr: CRYPTODATA[]): number => {
+const getAverageCoinPrice = (arr: CryptoData[]): number => {
   if (arr.length === 0) return 0; // Handle empty array case
 
   const sum = arr.reduce((acc, val) => acc + val.price, 0);
@@ -25,7 +25,7 @@ const fetchCryptoPrices = async () => {
   };
 
   try {
-    axios.get(tokenPriceUrl, options).then((response: { data: COINGECKOAPIPRICES }) => {
+    axios.get(tokenPriceUrl, options).then((response: { data: CoinGeckoApiPrices }) => {
       console.log(response.data);
 
       const downloadDate = new Date();
@@ -41,7 +41,7 @@ const fetchCryptoPrices = async () => {
   }
 };
 
-const getStoredCoinPrice = ({ coin, minutes }: { coin: CRYPTOCOINS; minutes: number }) => {
+const getStoredCoinPrice = ({ coin, minutes }: { coin: CryptoCoins; minutes: number }) => {
   const timelinedData = cryptoPrices[coin].slice(cryptoPrices[coin].length - minutes);
 
   const timelinedDataLength = timelinedData.length;

@@ -1,22 +1,22 @@
-type CRYPTOCOINS = 'bitcoin' | 'dogecoin' | 'ethereum';
+type CryptoCoins = 'bitcoin' | 'dogecoin' | 'ethereum';
 
-type CRYPTODATA = {
+type CryptoData = {
   date: Date;
   price: number;
 };
 
-type CRYPTOPRICES = {
-  bitcoin: CRYPTODATA[];
-  ethereum: CRYPTODATA[];
-  dogecoin: CRYPTODATA[];
+type CryptoPrices = {
+  bitcoin: CryptoData[];
+  ethereum: CryptoData[];
+  dogecoin: CryptoData[];
 };
 
-type COINGECKOPRICEFORMAT = {
+type CoinGeckoPriceFormat = {
   usd: number;
 };
 
-type COINGECKOAPIPRICES = {
-  [key in CRYPTOCOINS]: COINGECKOPRICEFORMAT;
+type CoinGeckoApiPrices = {
+  [key in CryptoCoins]: CoinGeckoPriceFormat;
 };
 
-export { CRYPTOPRICES, CRYPTODATA, COINGECKOAPIPRICES, COINGECKOPRICEFORMAT, CRYPTOCOINS };
+export { CryptoPrices, CryptoData, CoinGeckoApiPrices, CoinGeckoPriceFormat, CryptoCoins };
