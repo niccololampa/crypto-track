@@ -1,6 +1,6 @@
 "use client";
 import useFetchCryptoPrice from "../hooks/useFetchCryptoPrice";
-import { CryptoPrice } from "../types/types";
+import { CryptoPrice, CryptoCoins } from "../types/types";
 import PriceDisplay from "../components/PriceDisplay";
 import Layout from "../components/Layout";
 import { useSearchParams } from "next/navigation";
@@ -11,16 +11,12 @@ const PriceChart = dynamic(() => import("../components/PriceChart"), {
 });
 
 type CoinPageParams = {
-  params: { coin: string };
+  params: { coin: CryptoCoins };
 };
 export default function CoinPage({ params }: CoinPageParams) {
   const { coin } = params;
   const searchParams = useSearchParams();
   const searchMinutes = Number(searchParams.get("minutes"));
-
-  if (coin !== "bitcoin" && coin !== "dogecoin" && coin !== "ethereum") {
-    return <div>Invalid coin</div>;
-  }
 
   const { data, loading, error } = useFetchCryptoPrice<CryptoPrice>({
     coin: coin,

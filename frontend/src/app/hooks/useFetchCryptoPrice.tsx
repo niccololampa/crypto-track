@@ -36,10 +36,16 @@ function useFetchCryptoPrice<T>({
         setLoading(false);
       }
     };
-    fetchCryptoPrice();
 
-    const intervalID = setInterval(fetchCryptoPrice, 60000);
-    return () => clearInterval(intervalID);
+    if (coin !== "bitcoin" && coin !== "dogecoin" && coin !== "ethereum") {
+      setError("invalid coin");
+      setLoading(false);
+    } else {
+      fetchCryptoPrice();
+
+      const intervalID = setInterval(fetchCryptoPrice, 60000);
+      return () => clearInterval(intervalID);
+    }
   }, [coin, minutes]);
 
   return { data, loading, error };
