@@ -9,13 +9,13 @@ export default function Navigation() {
   return (
     <div>
       <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
-        <div className="flex m-auto flex-wrap">
+        <div className="flex m-auto flex-wrap flex-col">
           <Link className="ml-1 font-semibold text-xl tracking-tight" href="/">
             <div className="flex items-center flex-shrink-0 text-white mr-6">
               <svg
                 fill="#ffffff"
-                height="40px"
-                width="40px"
+                height="30px"
+                width="30px"
                 version="1.1"
                 id="Layer_1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +55,7 @@ export default function Navigation() {
               <div className="ml-1">CRYPTOTRACK</div>
             </div>
           </Link>
-          <div className="flex-grow flex items-center w-auto">
+          <div className="flex-grow flex items-center w-auto mt-4">
             <div className="text-sm lg:flex-grow">
               <Link
                 className={cx(
