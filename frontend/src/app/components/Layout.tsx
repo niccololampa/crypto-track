@@ -4,9 +4,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div>
       <Navigation></Navigation>
-      <div className="flex flex-col items-center">
+      <div>
         {children}
-        <div className="text-[12px] italic">Created by: Niccolo Lampa</div>
+        <div className="text-[12px] italic flex justify-center text-teal-500">
+          Created by: Niccolo Lampa
+        </div>
       </div>
     </div>
   );

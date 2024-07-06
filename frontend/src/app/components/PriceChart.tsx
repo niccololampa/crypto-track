@@ -14,7 +14,7 @@ export default function PriceChart(props: PriceChartProps) {
   const yData = history.map((point) => point.price.toFixed(2));
 
   const xData = history.map((point) =>
-    moment(point.date).format("MM/DD/YY/hh:mm a")
+    moment(point.date).format("MM/DD/YY hh:mm a")
   );
 
   const chartData = {
@@ -25,6 +25,7 @@ export default function PriceChart(props: PriceChartProps) {
       },
     ],
     options: {
+      colors: ["#14b8a6"],
       chart: {
         height: 350,
         zoom: {
@@ -35,7 +36,7 @@ export default function PriceChart(props: PriceChartProps) {
         enabled: false,
       },
       title: {
-        text: `${Coin[coin]} price (USD)`,
+        text: `${Coin[coin]} Price (USD)`,
         align: "center",
       },
       grid: {
@@ -51,7 +52,7 @@ export default function PriceChart(props: PriceChartProps) {
   };
 
   return (
-    <div>
+    <div className="mt-4">
       <Chart
         options={chartData.options}
         series={chartData.series}
