@@ -87,4 +87,4 @@ yarn start
 ```
 ***Note: Can also run `npm start`***
 
-Go to `http://localhost:3000/`
+Go to [http://localhost:3000/](http://localhost:3000/)
