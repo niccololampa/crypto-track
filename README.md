@@ -16,7 +16,7 @@ Just modify the url to include the search parameter `minutes`
 
 ![Screenshot 2024-07-06 at 11 24 40 PM](https://github.com/niccololampa/crypto-track/assets/37615906/9c0e90e2-1ec0-4bc0-9a7f-eef2fecc5d74)
 
-
+Backend api follows the `/price/bitcoin?minutes=12`, `/price/ethereum` format
 
 ## Installing dependencies
 
