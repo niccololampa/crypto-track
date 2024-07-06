@@ -3,8 +3,12 @@ import useFetchCryptoPrice from "../hooks/useFetchCryptoPrice";
 import { CryptoPrice } from "../types/types";
 import PriceDisplay from "../components/PriceDisplay";
 import Layout from "../components/Layout";
-import PriceChart from "../components/PriceChart";
 import { useSearchParams } from "next/navigation";
+import dynamic from "next/dynamic";
+
+const PriceChart = dynamic(() => import("../components/PriceChart"), {
+  ssr: false,
+});
 
 type CoinPageParams = {
   params: { coin: string };

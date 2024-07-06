@@ -1,7 +1,7 @@
+"use client";
 import { CryptoData, CryptoCoins, CoinTicker, Coin } from "../types/types";
-import Chart from "react-apexcharts";
-
 import moment from "moment";
+import Chart from "react-apexcharts";
 
 type PriceChartProps = {
   history: CryptoData[];
