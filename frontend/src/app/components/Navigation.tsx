@@ -9,26 +9,27 @@ export default function Navigation() {
   return (
     <div>
       <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
-        <div className="flex items-center flex-shrink-0 text-white mr-6">
-          <svg
-            fill="#ffffff"
-            height="50px"
-            width="50px"
-            version="1.1"
-            id="Layer_1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 503.607 503.607"
-          >
-            <g transform="translate(1 1)">
-              <g>
+        <Link className="ml-1 font-semibold text-xl tracking-tight" href="/">
+          <div className="flex items-center flex-shrink-0 text-white mr-6">
+            <svg
+              fill="#ffffff"
+              height="50px"
+              width="50px"
+              version="1.1"
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 503.607 503.607"
+            >
+              <g transform="translate(1 1)">
                 <g>
-                  <path
-                    d="M250.803-1C112.311-1-1,111.472-1,250.803s113.311,251.803,251.803,251.803s251.803-113.311,251.803-251.803
+                  <g>
+                    <path
+                      d="M250.803-1C112.311-1-1,111.472-1,250.803s113.311,251.803,251.803,251.803s251.803-113.311,251.803-251.803
 				S389.295-1,250.803-1z M250.803,485.82c-129.259,0-235.016-105.757-235.016-235.016S121.544,15.787,250.803,15.787
 				S485.82,121.544,485.82,250.803S380.062,485.82,250.803,485.82z"
-                  />
-                  <path
-                    d="M250.803,32.574c-120.026,0-218.229,98.203-218.229,218.229c0,120.866,98.203,218.23,218.229,218.23
+                    />
+                    <path
+                      d="M250.803,32.574c-120.026,0-218.229,98.203-218.229,218.229c0,120.866,98.203,218.23,218.229,218.23
 				s218.23-97.364,218.23-218.23C469.033,130.777,370.829,32.574,250.803,32.574z M452.057,242.41h-58.565v-16.787
 				c0-5.036-3.357-8.393-8.393-8.393c-5.036,0-8.393,3.357-8.393,8.393v16.787h-50.361v-16.787c0-5.036-3.357-8.393-8.393-8.393
 				c-5.036,0-8.393,3.357-8.393,8.393v16.787h-50.361v-50.361h16.787c5.036,0,8.393-3.357,8.393-8.393s-3.357-8.393-8.393-8.393
@@ -45,16 +46,14 @@ export default function Navigation() {
 				h-16.787v-50.361h50.361v16.787c0,5.036,3.357,8.393,8.393,8.393c5.036,0,8.393-3.357,8.393-8.393v-16.787h50.361v16.787
 				c0,5.036,3.357,8.393,8.393,8.393c5.036,0,8.393-3.357,8.393-8.393v-16.787h58.565
 				C447.731,363.351,363.351,447.731,259.197,452.057z"
-                  />
+                    />
+                  </g>
                 </g>
               </g>
-            </g>
-          </svg>
-
-          <span className="ml-1 font-semibold text-xl tracking-tight">
-            CRYPTO TRACK
-          </span>
-        </div>
+            </svg>
+            <div className="ml-1">CRYPTOTRACK</div>
+          </div>
+        </Link>
         <div className="flex-grow flex items-center w-auto">
           <div className="text-sm lg:flex-grow">
             <Link
@@ -80,7 +79,7 @@ export default function Navigation() {
                     stroke-linejoin="round"
                   />
                 </svg>
-                BTC
+                <div className="ml-1">BTC</div>
               </div>
             </Link>
 
@@ -112,7 +111,7 @@ export default function Navigation() {
                     fill={coin === "ethereum" ? "#ffffff" : "#99f6e4"}
                   />
                 </svg>
-                ETH
+                <div className="ml-1">ETH</div>
               </div>
             </Link>
 
@@ -135,7 +134,7 @@ export default function Navigation() {
                 >
                   <path d="M12.288 7.908h-1.715v3.38h2.697v1.415h-2.697v3.38h1.799c.462 0 3.794.052 3.789-3.933-.005-3.984-3.232-4.242-3.873-4.242zM12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm.472 18.481H8.126v-5.778H6.594v-1.415h1.532V5.511h3.73c.882 0 6.727-.183 6.727 6.594-.001 6.888-6.111 6.376-6.111 6.376z" />
                 </svg>
-                DOGE
+                <div className="ml-1">DOGE</div>
               </div>
             </Link>
           </div>
