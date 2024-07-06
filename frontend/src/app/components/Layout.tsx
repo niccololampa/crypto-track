@@ -4,8 +4,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div>
       <Navigation></Navigation>
-      {children}
-      <div>Created by: Niccolo Lampa</div>
+      <div className="flex flex-col items-center">
+        {children}
+        <div className="text-[12px] italic">Created by: Niccolo Lampa</div>
+      </div>
     </div>
   );
 }
