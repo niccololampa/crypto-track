@@ -5,7 +5,6 @@ import cx from "classnames";
 export default function Navigation() {
   const { coin } = useParams();
 
-  console.log(coin);
   return (
     <div>
       <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
