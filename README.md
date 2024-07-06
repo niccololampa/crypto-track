@@ -49,15 +49,18 @@ Insert the following in the .env file
 PORT=3002
 BASE_URL='http://localhost'
 DEFAULT_PRICE_MINUTES=60
-COIN_GECKO_PUBLIC_API_KEY={YOUR COIN GECKO TOKEN HERE}
+COIN_GECKO_PUBLIC_API_KEY='YOUR COIN GECKO TOKEN HERE'
 ```
 You will need to have your own coin gecko public key. For more information on how to create api key go to [https://docs.coingecko.com/v3.0.1/reference/setting-up-your-api-key](https://docs.coingecko.com/v3.0.1/reference/setting-up-your-api-key)
 
-Next you will need to run the backend server
+Next you will need build and run the backend server
 
 ```
-yarn run dev
+yarn run build
+yarn start
 ```
+
+***Note: Can also run `npm start`***
 
 
 ## Running the front-end application 
@@ -71,12 +74,17 @@ touch .env.local
 
 Insert the following in the .env file 
 
-```bash
+```.env
 NEXT_PUBLIC_URL_BACKEND_API=http://localhost:3002
 ```
+***Note: must be consistent with the `PORT` and `BASE_URL` of your backend indicated in the `.env`.***
 
 Next you will need to run the frontend
 
 ```
-yarn run dev
+yarn run build
+yarn start
 ```
+***Note: Can also run `npm start`***
+
+Go to `http://localhost:3000/`
