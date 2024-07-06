@@ -41,7 +41,7 @@ export default function CoinPage({ params }: CoinPageParams) {
       )}
 
       {error && (
-        <div className="text-[14px] text-red-400">
+        <div className="flex justify-center text-[14px] text-red-400">
           Error downloading latest price data: {error}
         </div>
       )}

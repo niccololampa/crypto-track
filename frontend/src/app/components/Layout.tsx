@@ -6,7 +6,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <Navigation></Navigation>
       <div>
         {children}
-        <div className="text-[12px] italic flex justify-center text-teal-500">
+
+        <div className="text-[13px] flex justify-center font-bold">
+          Updates every 60 seconds
+        </div>
+
+        <div className="text-[12px] mt-2 italic flex justify-center text-teal-500">
           Created by: Niccolo Lampa niccololampa@gmail.com
         </div>
       </div>
