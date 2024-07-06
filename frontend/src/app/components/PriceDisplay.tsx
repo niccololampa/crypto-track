@@ -12,7 +12,7 @@ export default function PriceDisplay(props: PriceDisplayProps) {
   const { latest, average, coin } = props;
 
   return (
-    <div className="flex mt-4 justify-center text-[14px]">
+    <div className="flex mt-4 justify-center text-[14px] flex-wrap">
       <div className="mr-1">
         <span className="mr-1">Crypto:</span>
         <span className="mr-1 font-bold text-teal-500">{Coin[coin]}</span>
